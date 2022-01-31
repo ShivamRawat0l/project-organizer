@@ -1,0 +1,17 @@
+.option {
+  text-align: center;
+  font-size: 26px;
+  //background-color: #f65;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  margin-left: 40px;
+  margin-right: 40px;
+  border-radius: 6px;
+}
+.option:hover {
+  text-align: center;
+  font-size: 26px;
+  background-color: #59f;
+}
