@@ -1,12 +1,11 @@
-import GridLayout from "react-grid-layout";
 import { Input } from "@mantine/core";
 import { RiSearchEyeFill } from "react-icons/ri";
-import ProjectOptions from "./ProjectOptions.tsx";
+import ProjectOptions from "../../../components/ProjectOptions";
+import AddProjectOptions from "../../../components/AddProjectOptions";
+import { useStores } from "../../../modal";
+import { observer } from "mobx-react-lite";
 
-type Props = {
-  key: string;
-};
-function MainMenu(props: Props) {
+function MainMenu() {
   return (
     <div style={{ flex: 1 }}>
       <div style={{ marginTop: 50, marginLeft: 40, marginRight: 40 }}>
@@ -30,11 +29,11 @@ function MainMenu(props: Props) {
           })}
         />
         <ProjectOptions />
-
         <ProjectOptions />
+        <AddProjectOptions />
       </div>
     </div>
   );
 }
 
-export default MainMenu;
+export default observer(MainMenu);

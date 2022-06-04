@@ -1,3 +1,3 @@
-export * from './root-store/root-store.ts';
-export * from './root-store/root-store-context.ts';
-export * from './root-store/setup-store.ts';
+export * from "./root-store/root-store";
+export * from "./root-store/root-store-context";
+export * from "./root-store/setup-store";

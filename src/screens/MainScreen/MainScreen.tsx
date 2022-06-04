@@ -1,16 +1,17 @@
 import React, { useMemo } from "react";
 import GridLayout from "react-grid-layout";
-import SideMenu from "../components/SideMenu.tsx";
-import useWindowDimensions from "../hooks/useWindowDimensions.tsx";
-import { Input } from "@mantine/core";
-import { RiSearchEyeFill } from "react-icons/ri";
-import { Colors } from "../utils/colors.ts";
-import MainMenu from "../components/MainMenu.tsx";
-const { ipcRenderer } = window.require("electron");
+import SideMenu from "../../components/SideMenu";
+import useWindowDimensions from "../../hooks/useWindowDimensions";
+import MainMenu from "./components/MainMenu";
+import { useStores } from "../../modal";
+import { observer } from "mobx-react-lite";
+import MainSideMenu from "./components/MainSideMenu";
 
 function MainScreen() {
   const { width, height } = useWindowDimensions();
   const dynamicHeight = useMemo(() => height / 100, [height]);
+
+  const { rootStore } = useStores();
 
   const layout = [
     {
@@ -49,15 +50,15 @@ function MainScreen() {
       width={width - 2}
       style={{ backgroundColor: "transparent" }}
     >
-      <div key="sidemenu" style={{ backgroundColor: "#362" }}>
-        <SideMenu />
-      </div>
       <div key="mainMenu" style={{ backgroundColor: "rgba(0,0,0,0.9)" }}>
         <MainMenu />
       </div>
       <div key="bottomBar" style={{ backgroundColor: "#f62" }}></div>
+      <div key="sidemenu" style={{ backgroundColor: "#362" }}>
+        <MainSideMenu />
+      </div>
     </GridLayout>
   );
 }
 
-export default MainScreen;
+export default observer(MainScreen);

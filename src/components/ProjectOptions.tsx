@@ -1,10 +1,6 @@
-import GridLayout from "react-grid-layout";
-import { Input } from "@mantine/core";
-import { RiSearchEyeFill } from "react-icons/ri";
-type Props = {
-  key: string;
-};
-function ProjectOptions(props: Props) {
+import React from "react";
+
+function ProjectOptions() {
   return (
     <div
       style={{
@@ -18,7 +14,7 @@ function ProjectOptions(props: Props) {
       <div style={{ display: "flex", flexDirection: "row" }}>
         <div>
           <i
-            class="devicon-flutter-plain colored"
+            className="devicon-flutter-plain colored"
             style={{ fontSize: 104 }}
           ></i>
         </div>

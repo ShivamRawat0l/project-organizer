@@ -1,13 +1,10 @@
-import GridLayout from "react-grid-layout";
-import Option from "./Option.tsx";
-type Props = {
-  key: string;
-};
-function SideMenu(props: Props) {
+import { observer } from "mobx-react-lite";
+import Option from "../../../components/Option";
+
+function SideMenu() {
   return (
     <div style={{ flex: 1 }}>
       <div
-        className="selected"
         style={{
           fontFamily: "Reem Kufi",
           fontSize: 44,
@@ -19,7 +16,7 @@ function SideMenu(props: Props) {
       >
         Project Organizer
       </div>
-      <div className="selected" style={{ marginTop: 50 }}>
+      <div style={{ marginTop: 50 }}>
         <Option text="Projects" selected />
         <Option text="Options" />
         <Option text="Guide" />
@@ -29,4 +26,4 @@ function SideMenu(props: Props) {
   );
 }
 
-export default SideMenu;
+export default observer(SideMenu);
